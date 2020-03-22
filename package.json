@@ -17,6 +17,7 @@
     "@angular/core": "~9.0.7",
     "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "~9.0.7",
+    "@angular/localize": "^9.0.7",
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
@@ -52,20 +53,24 @@
     "typescript": "~3.7.5"
   },
   "workspaces": {
-    "packages": ["app", "api", "shared"],
+    "packages": [
+      "app",
+      "api",
+      "shared"
+    ],
     "nohoist": [
-        "**/@angular/*",
-        "**/@angular/*/**",
-        "**/@ngrx/*",
-        "**/@ngrx/*/**",
-        "**/@ionic/*",
-        "**/@ionic/*/**",
-        "**/@ionic-native/*",
-        "**/@ionic-native/*/**",
-        "**/@angular-builders/*",
-        "**/@angular-builders/*/**",
-        "**/@angular-devkit/*",
-        "**/@angular-devkit/*/**"
+      "**/@angular/*",
+      "**/@angular/*/**",
+      "**/@ngrx/*",
+      "**/@ngrx/*/**",
+      "**/@ionic/*",
+      "**/@ionic/*/**",
+      "**/@ionic-native/*",
+      "**/@ionic-native/*/**",
+      "**/@angular-builders/*",
+      "**/@angular-builders/*/**",
+      "**/@angular-devkit/*",
+      "**/@angular-devkit/*/**"
     ]
   }
 }

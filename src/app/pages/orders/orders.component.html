@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row mt-2">
+    <div class="col">
+      <div class="jumbotron p-3">
+        <h3 class="text-center animated fadeIn">Lista de contratos</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="frm" (ngSubmit)="saveForm(frm.value)">
+        <input type="hidden" id="user" formControlName="user_id">
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="txtNome">Modelo: </label>
+            <input type="text" id="txtNome" class="form-control" formControlName="model">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="txtCpf">Valor do Aparelho: </label>
+            <input type="text" id="txtCpf" class="form-control" formControlName="vrl_year">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="txtEmail">Num parcelas:</label>
+            <input type="text" id="txtEmail" class="form-control" formControlName="num_parcel">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col text-center">
+            <button type="submit" class="btn btn-primary">{{this.btnLabel}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-striped" *ngIf="orders$ | async as response">
+        <thead>
+          <tr>
+            <td>Cliente</td>
+            <td>Aparelho</td>
+            <td>Valor</td>
+            <td>Parcelas</td>
+            <td class="text-center" style="width: 20%;">ação</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of response.orders">
+            <td>{{response.user.nome}}</td>
+            <td>{{order.model}}</td>
+            <td>{{order.vrl_year | currency:'BRL':'symbol':'0.2':'pt'}}</td>
+            <td>{{order.num_parcel}}</td>
+            <td class="text-center">
+              <button class="btn btn-outline-info btn-sm ml-2" (click)="editOrder(order.id)"><i class="fas fa-edit"></i></button>
+              <button class="btn btn-outline-danger btn-sm ml-2" (click)="deleteOrder(order.id)"><i class="fas fa-trash-alt"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <button routerLink="/users" class="btn">Voltar</button>
+    </div>
+  </div>
+</div>
