@@ -15,11 +15,18 @@
     "@angular/common": "~9.0.7",
     "@angular/compiler": "~9.0.7",
     "@angular/core": "~9.0.7",
+    "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "~9.0.7",
     "@angular/platform-browser": "~9.0.7",
     "@angular/platform-browser-dynamic": "~9.0.7",
     "@angular/router": "~9.0.7",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@popperjs/core": "^2.1.1",
+    "animate.css": "^3.7.2",
+    "bootstrap": "^4.4.1",
+    "jquery": "^3.4.1",
     "rxjs": "~6.5.4",
+    "sweetalert2": "^9.10.3",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
@@ -43,5 +50,22 @@
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
+  },
+  "workspaces": {
+    "packages": ["app", "api", "shared"],
+    "nohoist": [
+        "**/@angular/*",
+        "**/@angular/*/**",
+        "**/@ngrx/*",
+        "**/@ngrx/*/**",
+        "**/@ionic/*",
+        "**/@ionic/*/**",
+        "**/@ionic-native/*",
+        "**/@ionic-native/*/**",
+        "**/@angular-builders/*",
+        "**/@angular-builders/*/**",
+        "**/@angular-devkit/*",
+        "**/@angular-devkit/*/**"
+    ]
   }
 }
