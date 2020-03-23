@@ -91,7 +91,8 @@ export class UsersComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
+      confirmButtonText: 'Sim',
+      cancelButtonText: 'Não'
     }).then((result) => {
       if (result.value) {
         this.api.deleteUser(id).subscribe((resp) => {
